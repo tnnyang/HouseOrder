@@ -1,0 +1,11 @@
+<!--pages/shouQuanDetail/detail.wxml-->
+<view class="container" wx:if="{{isShowPage}}">
+  <image class="proxy" src="{{imgPath}}"></image>
+  <view class="section">
+    <text>备注：</text>
+    <textarea type="text" bindinput="remarksInput" class="remarks"/>
+  </view>
+  <view>
+    <button class="savebtn" catchtap="addAuthorizationDetailSave">保存</button>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/authorization/authorization.wxml-->
+<view class="container" wx:if="{{isShowPage}}">
+  <view class="author_listbox">
+    <view class="author_listitem" wx:for="{{authorizationList}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view class="author_listitem_detail">
+          <text>授权人：{{item.opName}}</text>
+          <text class="text_right">身份证：{{item.iDCard}}</text>
+      </view>
+      <view class="author_listitem_detail">
+          <text>授权时间：{{item.createTimeStr}}</text>
+          <navigator url="/pages/authorizationDetail/detail?infoId={{item.id}}" hover-class="none">查看详情</navigator>
+      </view>
+    </view>
+    <view class="no_more_data" hidden="{{noMoreData}}">暂无数据</view>
+  </view>
+  <view class="flex-wrp-bottom" style="flex-direction:row;">
+    <view class="tabs" catchtap="pingFangTab">
+      <image src="https://s1.ax1x.com/2018/07/31/PdqefJ.png"></image>评房
+      <view class="tabs_menu" hidden="{{isShowPFMenu}}">
+        <navigator url="/pages/addPingFang/addPingFang" hover-class="none">新进件</navigator>
+        <navigator url="/pages/reviewList/reviewList" hover-class="none">历史进件</navigator>
+        <navigator url="/pages/search/search?searchType=pingfang" hover-class="none">搜索</navigator>
+      </view>
+    </view>
+    <view url="/pages/authorization/authorization" class="tabs active" catchtap="authorizatioTab">
+      <image src="https://s1.ax1x.com/2018/07/31/PdqMOx.png"></image>授权
+      <view class="tabs_menu" hidden="{{isShowSQMenu}}">
+        <navigator url="/pages/scanAuthorization/scan" hover-class="none">新授权</navigator>
+        <navigator url="/pages/authorization/authorization" hover-class="none" wx:if="{{isLink}}">历史授权</navigator>
+        <view wx:if="{{!isLink}}">历史授权</view>
+        <navigator url="/pages/authorizationTemplate/template" hover-class="none">获取模板</navigator>
+        <navigator url="/pages/search/search" hover-class="none">搜索</navigator>
+      </view>
+    </view>
+  </view>
+</view>

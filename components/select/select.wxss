@@ -1,0 +1,21 @@
+/* components/select/select.wxss */
+.select{width:150rpx;margin-left:20rpx;background:url(https://s1.ax1x.com/2018/08/02/P0CjIA.png) no-repeat right center / 13rpx 25rpx;}
+.mask{position:fixed;left:0;top:0;z-index:1001;width:100%;height:100%;background:rgba(0, 0, 0, .5);}
+.selectOptions{position:fixed;left:0;bottom:0;z-index:1002;width:100%;line-height:76rpx;overflow:hidden;text-align:center;}
+.selectItem:not(:last-of-type){border-bottom:2rpx solid #f1f1f1;}
+.options_content{background:#fff;height:200rpx;width:690rpx;margin:0 auto;padding:0 15rpx;border-radius:16rpx;}
+.cancle{width:690rpx;height:90rpx;line-height:90rpx;margin:16rpx auto;background:#fff;color:#4992f8;border-radius:16rpx;}
+.slideOutUp{animation:slideOutUp .5s forwards;}
+.options_content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+@-webkit-keyframes slideOutUp{
+  0%{opacity:0;-webkit-transform:translateY(800rpx);transform:translateY(800rpx);}
+	100%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0);}
+}
+@keyframes slideOutUp{
+  0%{opacity:0;-webkit-transform:translateY(800rpx);transform:translateY(800rpx);}
+	100%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0);}
+}

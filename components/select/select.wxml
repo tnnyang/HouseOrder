@@ -1,0 +1,12 @@
+<view class="select" style="width:{{selectWidth}}">
+  <view catchtap='showItemData' class="selected" style="width:{{selectWidth}}">{{selectItemContent}}</view>
+  <view class="mask" hidden="{{showDropItem}}" catchtap="cancle"></view>
+  <view class="selectOptions slideOutUp" hidden="{{showDropItem}}">
+    <scroll-view  scroll-y="true" class="options_content" style="height:{{optionsHeight}}">
+      <block wx:for="{{itemList}}" wx:for-item="selectItem" wx:for-index="selectItemIndex" wx:key="selectItemIndex">
+        <view class="selectItem" data-selectItemIndex="{{selectItemIndex + 1}}" data-selectItem="{{selectItem}}" catchtap='selectItem'>{{selectItem}}</view>
+      </block>
+    </scroll-view>
+    <view class="cancle" catchtap="cancle">取消</view>
+  </view>  
+</view>

@@ -1,0 +1,8 @@
+/* pages/shouquanTemplate/template.wxss */
+.tips{font-size: 26rpx;color: #464646;text-align: center;margin-top: 125rpx;}
+.section{width: 650rpx;height: 90rpx;border: 2rpx solid #e8e8ea;border-radius: 10rpx;margin: 105rpx auto;display:flex;align-items:center;justify-content:center;padding-left: 36rpx;}
+.section image{width: 34rpx;height: 23rpx;}
+.section input {padding-left:30rpx;flex:1;height: 90rpx;font-size: 26rpx;color: #464646;}
+.input-placeholder{font-size: 24rpx;color: #a9a9a9;}
+.submitbtn{width:650rpx;height: 90rpx;color:#fe7743;margin:0 auto;font-size: 30rpx;line-height: 90rpx;background:none;border:4rpx solid #fe7743;}
+.submitbtn::after{border:none;}

@@ -1,0 +1,3 @@
+/* pages/findPwd/findPwd.wxss */
+.success{margin:190rpx 110rpx;font-size:26rpx;color:#464646;line-height:44rpx;}
+.login{height:84rpx;line-height:84rpx;text-align:center;color:#fe7743;font-size:30rpx;border:3rpx solid #fe7743;border-radius:10rpx;margin:0 50rpx;}

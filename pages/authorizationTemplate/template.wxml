@@ -1,0 +1,13 @@
+<!--pages/shouquanTemplate/template.wxml-->
+<view class="container">
+  <text class="tips">请留下接收模板的邮箱，我们系统会发送至邮箱的</text>
+  <form bindsubmit="formSubmit">
+    <view class="section">
+      <image src="https://s1.ax1x.com/2018/08/08/PsdMFK.png"></image>
+      <input type="text" placeholder="请输入邮箱" bindinput="emailInput" />
+    </view>
+    <view>
+      <button formType="submit" class="submitbtn">提交</button>
+    </view>
+  </form>
+</view>

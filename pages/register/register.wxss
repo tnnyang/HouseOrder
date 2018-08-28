@@ -1,0 +1,2 @@
+/* pages/register/register.wxss */
+.register{font-size:26rpx;color:#464646;text-align:center;display:block;margin-top:285rpx;}

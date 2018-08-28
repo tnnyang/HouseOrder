@@ -1,0 +1,66 @@
+<!--pages/pingFangDetail/detail.wxml-->
+<view class="container" wx:if="{{isShowPage}}" style="margin-bottom:{{containerBottom}}">
+    <view class="detail_top">
+      <view class="left">
+        <view>申请评估时间：{{assessDate}}</view>
+        <view>订单号：{{orderInfo.orderNo}}<text class="clipboard" data-orderNo="{{orderInfo.orderNo}}" data-address="{{houseList.address}}" bindtap="setClipboardData">复制</text></view>
+      </view>
+      <view class="right">
+        <view>负责人：{{managerName}}</view>
+        <view class="status">订单状态：{{orderInfo.orderStateEn}}</view>
+      </view>
+    </view>
+    <view class="grey"></view>
+    <view class="detail_content" wx:for="{{houseList}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view>房产省市：{{item.province + item.city + item.district}}</view>
+      <view>房产详细地址：{{item.address}}</view>
+      <view class="flex">
+        <view>小区名称：{{item.regionName}}</view>
+        <view>评估价：{{item.price}}万</view>
+      </view>    
+      <view>房产编号：{{item.estatesNo}}</view>
+      <view class="flex">
+        <view>所在楼层：{{item.floorNo}}层</view>
+      </view>
+      <view class="flex">
+        <view>
+          房产性质：
+          <block wx:if="{{item.houseNature == 1}}">多层公寓</block>
+          <block wx:elif="{{item.houseNature == 2}}">高层公寓</block>
+          <block wx:elif="{{item.houseNature == 3}}">花园住宅</block>
+          <block wx:elif="{{item.houseNature == 4}}">工业厂房</block>
+          <block wx:elif="{{item.houseNature == 5}}">商铺</block>
+          <block wx:elif="{{item.houseNature == 6}}">办公楼</block>
+          <block wx:elif="{{item.houseNature == 7}}">已购公房、房改房</block>
+          <block wx:elif="{{item.houseNature == 8}}">商住两用</block>
+          <block wx:elif="{{item.houseNature == 9}}">经济适用房</block>
+          <block wx:elif="{{item.houseNature == 10}}">其它</block>
+        </view>
+        <view>房产面积：{{item.houseArea}}平方</view>
+      </view>
+      <view class="flex">
+        <view>面积特殊情况：{{item.areaRemark}}</view>
+        <view>房产自估价：{{item.assessPrice}}万</view>
+      </view>
+      <view>备注：{{item.remark}}</view>
+      <view>
+        <text>房产证：</text>        
+        <view class="deed">
+          <view wx:for="{{item.picUrls}}" wx:for-item="itemImage" wx:for-index="picIdx" wx:key="{{picIdx}}" >
+            <image src="{{imgPath + itemImage}}"></image></view>
+            <!-- <image src="http://testfile.91zhaiquan.net:31102/file/preview.ashx?GUID={{itemImage}}"></image></view>             -->
+        </view>
+      </view>
+    </view>
+    <view class="operate" wx:if="{{orderInfo.orderState == 'house_confirm'}}">
+      <button class="confirm" bindtap="confirm" hover-class="none">确认</button>
+      <button class="reconsideration" bindtap="reconsideration" hover-class="none">复议</button>
+      <button class="cancel" bindtap="cancel" hover-class="none">放弃</button>
+    </view>    
+    <view class="operate" wx:elif="{{orderInfo.orderState == 'house_fail' || orderInfo.orderState == 'house_outtime'}}">
+      <button class="cancel" bindtap="againAssess" hover-class="none">再次评估</button>
+    </view>
+    <view class="tips" wx:elif="{{orderInfo.orderState == 'house_evaluation'}}">我们会快马加鞭的进行评估的，请稍等。</view>
+    <view class="tips" wx:elif="{{orderInfo.orderState == 'riskmanage_evaluation'}}">提示：此订单已完成评房阶段，其他详情进件等信息请进入web端查阅和操作。</view>
+    <view class="tips" wx:elif="{{orderInfo.orderState == 'house_confirmed'}}">提示：此订单已经确认过，详情进件请在web端进行录入和操作。</view>
+</view>

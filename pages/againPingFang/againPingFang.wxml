@@ -1,0 +1,102 @@
+<!--pages/againPingFang/againPingFang.wxml-->
+<view class="container" wx:if="{{isShowPage}}">
+  <block wx:for="{{deedData.assessHouseModels}}" wx:for-index="idx" wx:key="idx">
+    <block wx:for="{{dqbHouseLog}}" wx:for-index="backIdx" wx:for-item="backItem" wx:key="backIdx">
+    <view class="flex border_bottom reason" wx:if="{{reason}}">
+      <text>退回理由</text>
+      <view>{{backItem.message}}</view>
+    </view>
+    </block>
+    <view class="flex border_bottom">
+      <text>*房产省市</text>
+      <picker mode="region" bindchange="bindRegionChange" class="province" data-index="{{idx}}" wx:if="{{item.isShowDefaultProvince}}">
+        {{item.province}}
+      </picker>
+      <picker mode="region" bindchange="bindRegionChange" class="province" data-index="{{idx}}" wx:if="{{!item.isShowDefaultProvince}}">
+        {{item.deedInfo.province ? item.deedInfo.province : item.province}}，{{item.deedInfo.city ? item.deedInfo.city : item.city}}，{{item.deedInfo.county ? item.deedInfo.county : item.district}}
+      </picker>
+    </view>
+    <view class="flex_deed border_bottom">
+      <text>*房产证（自动识别）</text>
+      <view style="overflow:hidden;">
+        <view wx:for="{{item.imgList}}" wx:for-item="imgItem" wx:for-index="imgIdx" wx:key="imgIdx" class="deedImg" bindlongpress="showDelete" data-imgIdx="{{imgIdx}}" data-deedIdx="{{idx}}">
+          <image src="{{imgItem.imageSrc}}"></image>
+          <view catchtap="deleteImage" class="delete_img" hidden="{{imgItem.isShowDelete}}" data-guid="{{imgItem.fileGuid}}" data-imgIdx="{{imgIdx}}" data-deedIdx="{{idx}}">
+            <image src="https://s1.ax1x.com/2018/08/06/PrQ31f.png" ></image>
+          </view>          
+        </view>
+        <image src="https://s1.ax1x.com/2018/08/01/PwNi7Q.png" class="add_deed" data-index="{{idx}}" bindtap="uploadFile"></image>
+      </view>
+    </view>    
+    <view class="flex border_bottom">
+      <text>*房产详细地址</text>
+      <input value="{{item.deedInfo.address ? item.deedInfo.address : item.address}}" name="address" type="text" bindinput="address" data-index="{{idx}}"></input>
+    </view>
+    <view class="flex border_bottom">
+      <text>*小区名称</text>
+      <input name="xiaoQuName" type="text" value="{{item.regionName}}" bindinput="xiaoQuName" data-index="{{idx}}"></input>
+    </view>
+    <view class="flex border_bottom">
+      <text>*房产编号</text>
+      <input value="{{item.deedInfo.unitnumber ? item.deedInfo.unitnumber : item.estatesNo}}" name="deedNo" type="text" bindinput="deedNo" data-index="{{idx}}"></input>
+    </view>
+    <view class="flex1">
+      <view class="border_bottom flex_inner">
+        <text>*所在楼层</text>
+        <input class="width130" name="inFloor" type="number" value="{{item.floorNo}}" bindinput="inFloor" data-index="{{idx}}"></input>
+        <text>层</text>
+      </view>
+      <view class="border_bottom">
+        <text>*总楼层</text>
+        <input class="width140" name="totalFloor" type="number" value="{{item.floorSum}}" bindinput="totalFloor" data-index="{{idx}}"></input>
+        <text>层</text>
+      </view>
+    </view>
+    <view style="clear:both"></view>
+    <view class="flex1">
+      <view class="border_bottom flex_inner">
+        <text style="margin-right:20rpx;">*房产性质</text>
+        <picker bindchange="houseNature" value="{{item.natureIndex}}" range="{{item.natureNameList}}" wx:if="{{item.isShowNatureDefault}}" class="nature" data-index="{{idx}}">
+          {{item.natureDefault}}
+        </picker>
+        <picker bindchange="houseNature" value="{{item.natureIndex}}" range="{{item.natureNameList}}" wx:if="{{!item.isShowNatureDefault}}" class="nature" data-index="{{idx}}">
+          {{item.natureNameList[item.natureIndex]}}
+        </picker>
+      </view>
+      <view class="border_bottom">
+        <text>*房产面积</text>
+        <input class="width100" value="{{item.deedInfo.buildarea ? item.deedInfo.buildarea : item.houseArea}}" name="buildArea" type="digit" bindinput="buildArea" data-index="{{idx}}"></input>
+        <text>平方</text>
+      </view>
+    </view>
+    <view style="clear:both"></view>
+    <view class="flex border_bottom">
+      <text>面积特殊情况说明</text>
+      <input name="AreaDesc" type="text" value="{{item.areaRemark}}" bindinput="AreaDesc" data-index="{{idx}}"></input>
+    </view>
+    <view class="flex border_bottom">
+      <text>*房产自估价</text>
+      <input name="deedPrice" type="digit" value="{{item.assessPrice}}" bindinput="deedPrice" data-index="{{idx}}"></input>
+      <text>万</text>
+    </view>
+    <view class="flex">
+      <text>备注</text>
+      <input name="remarks" type="text" value="{{item.remark}}" bindinput="remarks" data-index="{{idx}}"></input>
+    </view>
+    <view class="grey"></view>
+  </block>
+  <view class="pingFang_control">
+    <view class="flex add_more" catchtap="addDeed">
+      <image src="https://s1.ax1x.com/2018/08/01/PwBcgs.png" class="add_deed"></image>
+      <text>加</text>
+    </view>
+    <view class="flex add_more reduce_more" catchtap="reduceDeed" hidden="{{isShowReduce}}">
+      <image src="https://s1.ax1x.com/2018/08/07/PrvJbQ.png" class="reduce_deed"></image>
+      <text>减</text>
+    </view>
+  </view>  
+  <view class="operate">
+    <button class="submit" catchtap="startPingFang">开始评房</button>
+  </view>
+</view>
+<dialog id='dialog' content="{{dialogContent}}" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent" dialogWidth="{{dialogWidth}}" dialogLineHeight="{{dialogLineHeight}}"></dialog>

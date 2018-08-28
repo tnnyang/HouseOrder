@@ -1,0 +1,11 @@
+/* pages/login/login.wxss */
+.login{background:url(https://s1.ax1x.com/2018/07/31/Pd424I.jpg) no-repeat left bottom / 750rpx 1334rpx;height:1220rpx;padding:206rpx 90rpx 0;}
+.section{display:flex;align-items:center;justify-content:center;border-bottom:1rpx solid #fff;}
+.login image{width:44rpx;height:44rpx;}
+.login input{height:120rpx;padding-left:46rpx;flex:1;color:#fff;font-size:34rpx;}
+.input-placeholder{color:#fff;font-size:34rpx;}
+.submit{background:#ff6446;color:#fff;font-size:36rpx;margin-top:162rpx;height:100rpx;line-height:100rpx;border-radius:10rpx;}
+.submit::after{border:1px solid #ff6446;}
+.control{display:flex;font-size:28rpx;color:#fff;margin-top:80rpx;}
+.control navigator{flex:1;width:265rpx;height:95rpx;line-height:95rpx;background:rgba(255, 255, 255, .25);text-align:center;border-radius:48rpx;}
+.forget_pwd{margin-right:38rpx;}

@@ -1,0 +1,16 @@
+<!--pages/forgetPwd/forgetPwd.wxml-->
+<view class="container forget_pwd">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <input type="number" placeholder="请输入手机号" class="user" bindinput="phoneInput" maxlength="11" />
+    </view>
+    <view class="section">
+      <input type="number" placeholder="请输入验证码" class="vercode" bindinput="codeInput" maxlength="6" />
+      <image src="{{vercodeSrc}}" class="vercode_num" bindtap="changeCode"></image>
+      <!-- <button  type="button" class="sendVerCode" catchtap="sendVerCode" disabled="{{disabled}}">{{getVerCode}}</button > -->
+    </view>
+    <view>
+      <button formType="submit" class="submit">确认</button>
+    </view>
+  </form>
+</view>

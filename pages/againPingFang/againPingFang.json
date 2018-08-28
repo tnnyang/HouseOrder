@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "评房",
+  "usingComponents": {
+    "dialog": "../../components/dialog/dialog"
+  }
+}

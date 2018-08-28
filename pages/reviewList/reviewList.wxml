@@ -1,0 +1,50 @@
+<!--评房列表-->
+<view class="container" wx:if="{{isShowPage}}">
+  <view class="listbox">
+    <view class="list_item" wx:for="{{pingFangList}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view class="state_icon" wx:if='{{item.watch == 0}}'></view>
+      <view class="list_item_detail">
+          <text>订单号：{{item.orderNo}}</text>
+          <label class="copy_btn" data-orderNo="{{item.orderNo}}" data-address="{{item.address}}" bindtap="setClipboardData">复制</label>
+          <text class="text_right">负责人：{{item.managerName}}</text>
+      </view>
+      <view class="list_item_detail">
+          <text>小区名：{{item.regionName}}</text>
+          <text class="text_right">面积：{{item.houseArea}}平</text>
+      </view>
+      <view class="list_item_detail">
+          <text>地址：{{item.address}}</text>
+      </view>
+      <view class="list_item_detail">
+          <text class="state_text">状态：{{item.orderState}}</text>
+          <block wx:if="{{item.orderState == '房屋评估退回'}}">
+          <navigator url="/pages/againPingFang/againPingFang?orderId={{item.id}}&back=back" hover-class="none">详情</navigator>
+          </block>
+          <block wx:else>
+          <navigator url="/pages/pingFangDetail/detail?orderId={{item.id}}&person={{item.managerName}}" hover-class="none">详情</navigator>
+          </block>
+      </view>
+    </view>
+    <view class="no_more_data" hidden="{{noMoreData}}">暂无数据</view>
+  </view>
+  <view class="flex-wrp-bottom" style="flex-direction:row;">
+    <view class="tabs active" catchtap="pingFangTab">
+      <image src="https://s1.ax1x.com/2018/07/31/Pdqnp9.png"></image>评房
+      <view class="tabs_menu" hidden="{{isShowPFMenu}}">
+        <navigator url="/pages/addPingFang/addPingFang" hover-class="none">新进件</navigator>
+        <navigator url="/pages/reviewList/reviewList" hover-class="none" wx:if="{{isLink}}">历史进件</navigator>
+        <view wx:if="{{!isLink}}">历史进件</view>
+        <navigator url="/pages/search/search?searchType=pingfang" hover-class="none">搜索</navigator>
+      </view>
+    </view>
+    <view class="tabs" catchtap="authorizatioTab">
+      <image src="https://s1.ax1x.com/2018/07/31/PdqulR.png"></image>授权
+      <view class="tabs_menu" hidden="{{isShowSQMenu}}">
+        <navigator url="/pages/scanAuthorization/scan" hover-class="none">新授权</navigator>
+        <navigator url="/pages/authorization/authorization" hover-class="none">历史授权</navigator>
+        <navigator url="/pages/authorizationTemplate/template" hover-class="none">获取模板</navigator>
+        <navigator url="/pages/search/search" hover-class="none">搜索</navigator>
+      </view>
+    </view>
+  </view>
+</view>

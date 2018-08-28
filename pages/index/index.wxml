@@ -1,0 +1,22 @@
+<!--pages/starTPage/starTPage.wxml-->
+<view class="container start">
+  <view class="flex-wrp-bottom" style="flex-direction:row;">
+    <view class="tabs active" catchtap="pingFangTab">
+      <image src="https://s1.ax1x.com/2018/07/31/Pdqnp9.png"></image>评房
+      <view class="tabs_menu" hidden="{{isShowPFMenu}}">
+        <navigator url="/pages/addPingFang/addPingFang" hover-class="none">新进件</navigator>
+        <navigator url="/pages/reviewList/reviewList" hover-class="none">历史进件</navigator>        
+        <navigator url="/pages/search/search?searchType=pingfang" hover-class="none">搜索</navigator>
+      </view>
+    </view>
+    <view class="tabs active" catchtap="authorizatioTab">
+      <image src="https://s1.ax1x.com/2018/07/31/PdqMOx.png"></image>授权
+      <view class="tabs_menu" hidden="{{isShowSQMenu}}">
+        <navigator url="/pages/scanAuthorization/scan" hover-class="none">新授权</navigator>
+        <navigator url="/pages/authorization/authorization" hover-class="none">历史授权</navigator>
+        <navigator url="/pages/authorizationTemplate/template" hover-class="none">获取模板</navigator>
+        <navigator url="/pages/search/search" hover-class="none">搜索</navigator>
+      </view>
+    </view>
+  </view>
+</view>

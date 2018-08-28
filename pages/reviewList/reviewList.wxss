@@ -1,0 +1,20 @@
+/* pages/reviewlist/reviewlist.wxss */
+page{background: #f1f1f1;}
+.flex-wrp-bottom {width: 100%;height: 98rpx;background: #fff;border-top: 1rpx solid #b8b8b8;box-shadow: 0rpx -1rpx 12rpx #b8b8b8;position: fixed;bottom: 0;left: 0;padding-top: 9rpx;}
+.flex-wrp-bottom .tabs{width: 50%;font-size: 24rpx;color: #a8a7a7;float: left;text-align: center;position:relative;}
+.tabs_menu{position:absolute;left:0;bottom:100rpx;width:60%;margin-left:20%;background:#fff;box-shadow:0 0 8rpx rgba(156, 156, 155, .7);line-height:76rpx;color: #282828;border-radius:10rpx;}
+.tabs_menu navigator:not(:last-of-type), .tabs_menu view{border-bottom:2rpx solid #f1f1f1;}
+.flex-wrp-bottom .active{color: #282828;}
+.flex-wrp-bottom image{width: 56rpx;height: 56rpx;display: block;margin: 0 auto;}
+.flex-wrp-center{position: fixed;top: 50%;margin-top: -140rpx;left: 25rpx;}
+.flex-wrp-center navigator{width: 69rpx;height: 69rpx;}
+.flex-wrp-center image{width: 69rpx;height: 69rpx;}
+.listbox{margin-bottom: 110rpx;}
+.listbox .list_item:first-child{border-top:none;}
+.list_item{padding: 30rpx 25rpx 26rpx;background: #fff;border-top: 1rpx solid #e8e8ea;border-bottom: 1rpx solid #e8e8ea;font-size: 24rpx;color: #464646;line-height: 44rpx;margin-bottom: 10rpx;}
+.state_icon{width: 12rpx;height: 12rpx;border-radius: 50%;background: #4a94f7;margin: -9rpx 0 9rpx 0;}
+.list_item_detail{overflow: hidden;margin-bottom: 4rpx;}
+.list_item_detail .text_right{width: 190rpx;float: right;}
+.list_item_detail .state_text{color: #fe7743;}
+.list_item_detail .copy_btn{font-size: 22rpx;color:#4995f8;display: inline-block;border:none;background: none;margin-left: 20rpx;text-decoration-line: underline;}
+.list_item_detail navigator{width: 105rpx;height: 40rpx;background: #4995fb;border-radius: 10rpx;color: #fff;line-height: 40rpx;text-align: center;float: right;}

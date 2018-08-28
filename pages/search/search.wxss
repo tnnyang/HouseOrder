@@ -1,0 +1,6 @@
+/* pages/search/search.wxss */
+page{background: #f1f1f1;width: 100%;}
+.search{width: 650rpx;height: 90rpx;border: 2rpx solid #e8e8ea;border-radius: 10rpx;margin: 354rpx auto 0;background: #fff;overflow: hidden}
+.search_icon{margin: 30rpx 22rpx 0 30rpx;float: left;}
+.search .input-placeholder{font-size: 24rpx;color: #a9a9aa;}
+.search input{width: 86%;height: 90rpx;min-height:90rpx;line-height:90rpx;font-size:24rpx;color:#343434;} 

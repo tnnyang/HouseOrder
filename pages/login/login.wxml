@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="container login">
+  <form bindsubmit="formSubmit">
+    <view class="section">
+      <image src="https://s1.ax1x.com/2018/07/31/PdfGxU.png"></image>
+      <input type="text" placeholder="请输入账户" class="user" bindinput="userInput" maxlength="11"/>
+    </view>
+    <view class="section">
+      <image src="https://s1.ax1x.com/2018/07/31/PdffII.png"></image>
+      <input type="password" placeholder="请输入密码" class="pwd" bindinput="pwdInput"/>
+    </view>
+    <view>
+      <button formType="submit" class="submit">登录</button>
+    </view>
+    <view class="control">
+      <navigator url="/pages/forgetPwd/forgetPwd" class="forget_pwd">忘记密码</navigator>
+      <navigator url="/pages/register/register">注册</navigator>
+    </view>
+  </form>
+  <dialog id='dialog' isShowCancel="{{isShowCancel}}" content="{{dialogContent}}" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></dialog>
+</view>

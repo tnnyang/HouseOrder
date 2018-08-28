@@ -1,0 +1,35 @@
+/* pages/fuyi/fuyi.wxss */
+page{background:#f1f1f1;}
+.container{margin-bottom:186rpx;}
+.detail_top{background:#fff;font-size:24rpx;color:#464646;display:flex;padding:13rpx 25rpx;line-height:44rpx;}
+.detail_top .left{flex:1;}
+.detail_top .right{width:240rpx;}
+.clipboard{color:#4995f8;font-size:22rpx;margin-left:25rpx;text-decoration:underline;}
+.status{color:#fe7743;font-size:24rpx;}
+.grey{height:14rpx;background:#f1f1f1;border-top:1rpx solid #e8e8ea;border-bottom:1rpx solid #e8e8ea;}
+.detail_content{background:#fff;font-size:24rpx;color:#464646;border-bottom:1rpx solid #e8e8ea;padding:13rpx 25rpx 0;line-height:44rpx;}
+.flex{display:flex;}
+.flex view{flex:1;}
+.flex view:first-child{margin-right:180rpx;}
+.deed{margin:20rpx 0 0 75rpx;overflow:hidden;}
+.deed view{float:left;}
+.deed image{width:150rpx;height:100rpx;margin:0 50rpx 30rpx 0;}
+.operate{display:flex;padding:47rpx 25rpx;position:fixed;width:100%;height:186rpx;left:0;bottom:0;background:#f1f1f1;}
+.operate button{flex:1;height:84rpx;line-height:84rpx;background:none;font-size:26rpx;border-radius:10rpx;}
+.operate button::after{border:none;}
+.confirm, .quxiao{color:#fe7743;margin-right:80rpx;}
+.reconsideration{border:3rpx solid #4992f8;color:#4992f8;margin-right:80rpx;}
+.cancel, .submit{color:#febf10;}
+.submit{margin-right:100rpx;border:4rpx solid #febf10;}
+.quxiao{margin:0;border:4rpx solid #fe7743;}
+.why_fuyi{background:#fef0ed;margin:0 -25rpx;padding:20rpx 25rpx 0;}
+.input-placeholder, .textarea-placeholder{font-size:24rpx;color:#464646;}
+.border_bottom{border-bottom:2rpx solid #ddd;margin:0 -25rpx;padding:0 25rpx;height:84rpx;}
+.explanation{height:84rpx;padding:0 10rpx;flex:1;}
+.fuyi_img{display:flex;align-items:center;padding:20rpx 0;}
+.fuyi_img .uploadFile{width:36rpx;height:36rpx;float:left;}
+.pic_section{flex:1;margin-left:20rpx;}
+.fuyi_upimg{width:150rpx;height:100rpx;float:left;}
+.deedImg{float:left;margin:0 50rpx 20rpx 0;position:relative;}
+.deedImg .delete_img{position:absolute;top:-9rpx;right:-10rpx;width:20rpx;height:20rpx;z-index:100;}
+.reason{flex:1;margin-left:10rpx;background:url(https://s1.ax1x.com/2018/08/02/P0CjIA.png) no-repeat right center / 13rpx 25rpx;}

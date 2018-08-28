@@ -1,0 +1,24 @@
+{
+  "pages":[       
+    "pages/index/index",
+    "pages/reviewList/reviewList",            
+    "pages/forgetPwd/forgetPwd",    
+    "pages/addPingFang/addPingFang",
+    "pages/authorization/authorization",  
+    "pages/authorizationDetail/detail",
+    "pages/authorizationTemplate/template",
+    "pages/search/search",    
+    "pages/login/login",
+    "pages/findPwd/findPwd",    
+    "pages/register/register",    
+    "pages/fuyi/fuyi",
+    "pages/pingFangDetail/detail",  
+    "pages/scanAuthorization/scan",
+    "pages/againPingFang/againPingFang"    
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#fe7743",
+    "navigationBarTitleText": "贷乾保",
+    "navigationBarTextStyle":"#fff"
+  }
+}

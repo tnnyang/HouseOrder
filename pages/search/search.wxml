@@ -1,0 +1,15 @@
+<!--搜索页面-->
+<view class="container">
+  <block wx:if="{{isPingFang}}">
+    <view class="search">
+      <icon class="search_icon" bindtap="searchPingFang" size='15' type='search'></icon>
+      <input type="search" placeholder="请输入房屋关键信息" bindconfirm="searchPingFang" bindinput="searchPingFangInput" focus="{{isFocus}}"/>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="search">
+      <icon class="search_icon" bindtap="searchAuthorization" size='15' type='search'></icon>
+      <input type="search" placeholder="请输入授权人或身份证关键信息" bindconfirm="searchAuthorization" bindinput="searchAuthorizationInput" focus="{{isFocus}}"/>
+    </view>
+  </block>
+</view>

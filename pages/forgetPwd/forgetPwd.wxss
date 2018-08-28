@@ -1,0 +1,10 @@
+/* pages/forgetPwd/forgetPwd.wxss */
+page{background:#fafafa;}
+.forget_pwd{margin:125rpx 50rpx 0;}
+.section{display:flex;}
+.forget_pwd input{border:2rpx solid #e8e8ea;height:88rpx;margin-bottom:50rpx;font-size:24rpx;color:#a9a9aa;padding-left:40rpx;border-radius:10rpx;flex:1;}
+.input-placeholder{color:#a9a9aa;font-size:24rpx;}
+.submit{font-size:30rpx;color:#fe7743;height:88rpx;line-height:88rpx;background:none;border:3rpx solid #fe7743;border-radius:10rpx;margin-top:85rpx;}
+.vercode{margin-right:25rpx;}
+.sendVerCode{width:184rpx;font-size:24rpx;color:#fff;background:#4995f8;text-align:center;height:88rpx;line-height:88rpx;border-radius:10rpx;}
+.vercode_num{width:184rpx;height:43px;}

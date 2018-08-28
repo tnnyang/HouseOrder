@@ -1,0 +1,10 @@
+<!--pages/findPwd/findPwd.wxml-->
+<view class="container">
+  <view class="success">
+    <view>恭喜您，找回密码成功，账户和密码已发送至</view>
+    <view>{{phone}}，请注意查收。</view>
+  </view>
+  <view>
+      <navigator url="/pages/login/login" class="login">登录</navigator>
+    </view>
+</view>

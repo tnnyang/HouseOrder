@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "评房详情",
+  "usingComponents": {
+    "select": "../../components/select/select"
+  }
+}

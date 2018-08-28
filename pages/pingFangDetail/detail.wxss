@@ -1,0 +1,23 @@
+/* pages/pingFangDetail/detail.wxss */
+page{background:#f1f1f1;}
+/* .container{margin-bottom:186rpx;} */
+.detail_top{background:#fff;font-size:24rpx;color:#464646;display:flex;padding:13rpx 25rpx;line-height:44rpx;}
+.detail_top .left{flex:1;}
+.detail_top .right{width:240rpx;}
+.clipboard{color:#4995f8;font-size:22rpx;margin-left:25rpx;text-decoration:underline;}
+.status{color:#fe7743;font-size:24rpx;}
+.grey{height:14rpx;background:#f1f1f1;border-top:1rpx solid #e8e8ea;}
+.detail_content{background:#fff;font-size:24rpx;color:#464646;border-top:1rpx solid #e8e8ea;border-bottom:1rpx solid #e8e8ea;padding:13rpx 25rpx 0;line-height:44rpx;margin-bottom:14rpx;}
+.flex{display:flex;}
+.flex view{flex:1;}
+.flex view:first-child{margin-right:170rpx;}
+.deed{margin:20rpx 0 0 75rpx;overflow:hidden;}
+.deed view{float:left;}
+.deed image{width:150rpx;height:100rpx;margin:0 50rpx 30rpx 0;}
+.operate{display:flex;padding:47rpx 25rpx;position:fixed;width:100%;height:186rpx;left:0;bottom:0;background:#f1f1f1;}
+.operate button{flex:1;height:84rpx;line-height:84rpx;background:none;font-size:26rpx;border-radius:10rpx;}
+.operate button::after{border:none;}
+.confirm{color:#fe7743;border:4rpx solid #fe7743;}
+.reconsideration{color:#4992f8;margin:0 80rpx;border:4rpx solid #4992f8;}
+.cancel{color:#febf10;border:4rpx solid #febf10;}
+.tips{color:#fe7743;font-size:24rpx;padding:0 25rpx; line-height:44rpx;margin-bottom:20rpx;}
