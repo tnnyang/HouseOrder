@@ -6,13 +6,13 @@ let common = {
   },
   //测试环境
   testApi: {
-    request: "https://dqbs.91zhaiquan.net:9081",
-    resource: "https://fileapi.shunangtech.com:41101"
+    request: "https://10.1.0.100:9081",
+    resource: "https://10.1.0.100:41101"
   },
   //生产环境
   prodApi: {
-    request: "https://www.51daiqianbao.com:9081",
-    resource: "https://fileapi.shunangtech.com:41101"
+    request: "https://10.1.0.110:9081",
+    resource: "https://10.1.0.110:41101"
   },
   //将Object对象参数转换为URL参数
   objToUrlParams: obj => {
